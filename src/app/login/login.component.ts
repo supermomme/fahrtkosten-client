@@ -31,6 +31,7 @@ export class LoginComponent implements OnInit {
       'password': this.password
     }).then((result)=>{
       this.router.navigate(['routes']);
+      this.toastrService.success('','Jaa du bist drin!')
     }).catch((err)=>{
       console.log(err)
       this.toastrService.error('','Login Falsch')

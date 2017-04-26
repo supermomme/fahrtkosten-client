@@ -1,3 +1,20 @@
-<p>
-  routes-list works!
-</p>
+<div class="container">
+  <h3>Routen</h3>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Titel</th>
+        <th></th>
+        <th *ngIf="isAuthed"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let route of routes">
+        <td>{{route.title}}</td>
+        <td><button (click)="detailClick(route)" class="btn btn-success form-control">Details</button></td>
+        <td *ngIf="isAuthed"><button (click)="editClick(route)" class="btn btn-warning form-control">Editieren</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

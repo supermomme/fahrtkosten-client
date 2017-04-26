@@ -11,16 +11,19 @@ export class AuthGuardService implements CanActivate {
   ) {
   }
 
-  canActivate() {
+  canActivate(noRedirect?) {
     return this.api.app.authenticate().then((user) => {
       return true;
     })
     .catch((err) => {
       console.log(err)
-      this.router.navigate(['login']);
+      if (noRedirect == undefined || noRedirect == false) {
+        this.router.navigate(['login']);
+      }
       return false;
     })
   }
+
   logout() {
     this.api.app.logout().then(() => {
     })

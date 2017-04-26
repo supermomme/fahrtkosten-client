@@ -12,6 +12,7 @@ import { DirectionsMapDirective } from './directions-map.directive';
 
 import { ApiService } from './api.service';
 import { AuthGuardService } from './auth-guard.service';
+import { RoutesService } from './routes.service';
 
 import { AppComponent } from './app.component';
 import { RoutesListComponent } from './routes-list/routes-list.component';
@@ -56,7 +57,8 @@ const appRoutes: Routes = [
   ],
   providers: [
     ApiService,
-    AuthGuardService
+    AuthGuardService,
+    RoutesService
   ],
   bootstrap: [AppComponent]
 })
