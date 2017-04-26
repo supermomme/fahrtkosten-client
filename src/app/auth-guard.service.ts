@@ -13,7 +13,7 @@ export class AuthGuardService implements CanActivate {
 
   canActivate() {
     return this.api.app.authenticate().then((user) => {
-      return this.api.app.service('clients').find().then((res) => res.data[0].maintenance && user.data.role != 10 ? Promise.reject('Wartungsmodus') : true)
+      return true;
     })
     .catch((err) => {
       console.log(err)
